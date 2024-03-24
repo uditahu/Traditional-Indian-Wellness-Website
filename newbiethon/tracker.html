@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body style="background-color: rgb(206, 214, 171);">
+    <div class="header">
+        <h1 class="title" style="
+          text-align: center;
+          color: rgb(17, 24, 39);
+          font-size: 40px;
+          font-family: var(--header-logo-fontFamily);
+          font-weight: var(--header-logo-fontWeight);
+          line-height: 1.2;
+          font-weight: bold;
+          font-weight: bold;
+          background-color:rgba(255, 99, 71, 0.2);
+          margin: 25px;
+          border-radius: 10px;
+          height: 70px;
+          
+        ">
+            SattvaSoul
+        </h1>
+
+        <style>
+            .button-container {
+                text-align: right;
+            }
+
+            .button-container button {
+                border: none;
+                border-radius: 10px;
+                font-size: 15px;
+                font-weight: bold;
+                cursor: pointer;
+                background-color: rgb(172, 158, 127);
+                margin-top: 20px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                padding-left: 12px;
+                padding-right: 12px;
+                margin-left: 8px;
+                margin-right: 8px;
+                margin-right: 4px;
+                margin-bottom: 40px;
+            }
+
+            .button-container button:hover {
+                opacity: 0.7;
+                background-color: ;
+            }
+
+            .DIET-BUTTON,
+            .EXCERCISE-BUTTON,
+            .MEDITATION-BUTTON,
+            .AYURVEDIC-BUTTON,
+            .PROGRESS-BUTTON,
+            .CONSULTANCY-BUTTON,
+            .submit {
+                background-color: rgb(73, 89, 0);
+                ;
+                color: white;
+                height: 40px;
+                width: 240px;
+                border: none;
+                border-radius: 10px;
+                font-size: 15px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-right: 2px;
+                x margin-left: 2PX;
+            }
+
+            .DIET-BUTTON:hover,
+            .EXCERCISE-BUTTON:hover,
+            .MEDITATION-BUTTON:hover,
+            .AYURVEDIC-BUTTON:hover,
+            .PROGRESS-BUTTON:hover,
+            .CONSULTANCY-BUTTON:hover,
+            .submit:hover {
+                opacity: 0.7;
+            }
+
+            .container {
+                width: 100%;
+                height: 10vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+                flex-direction: column;
+            }
+
+            .main-body {}
+
+            .image {
+                border: none;
+                padding: 500px;
+                opacity: 0.1px;
+                background-repeat: no-repeat;
+                background-size: 2000px 800px;
+                box-shadow: 2px 2px 2px;
+                margin: 50px;
+            }
+
+            .login-head {
+                color: rgb(17, 24, 39);
+            }
+
+            label {
+                color: rgb(17, 24, 39);
+                font-size: 30px;
+                font-family: var(--header-logo-fontFamily);
+                font-weight: var(--header-logo-fontWeight);
+
+            }
+
+            .footer {
+                position: absolute;
+                bottom: 0;
+                right: 25px;
+
+            }
+        </style>
+        <div class="button-container">
+            <button>Login</button>
+            <button>Sign Up</button> <BR>
+        </div>
+        <button class="AYURVEDIC-BUTTON">AYURVEDIC HOME REMIDIES</button>
+        <button class="CONSULTANCY-BUTTON">ONLINE CONSULTANCY</button>
+        <button class="MEDITATION-BUTTON">MEDITATION TIMER</button>
+        <button class="EXCERCISE-BUTTON"> EXCERCISE PLAN</button>
+        <button class="DIET-BUTTON">PERSONALIZED DIET PLAN</button>
+
+        <button class="PROGRESS-BUTTON">PROGRESS TRACKER</button>
+
+        <div class="header">
+            <P class="title">MEDITATION WEBSITE</P>
+            <BUTTON>PERSONALIZED DIET PLAN</BUTTON>
+            <BUTTON>EXCERCISE PLAN</BUTTON>
+            <BUTTON>MEDITATION TIMER</BUTTON>
+            <BUTTON>AYURVEDIC HOME REMIDIES</BUTTON><BUTTON>ONLINE CONSULTANCY</BUTTON>
+            <BUTTON>PROGRESS TRACKER</BUTTON>
+
+        </div>
+        <div class="main-body">
+            <div class="content"></div>
+            <p id="countdown">10:00</p>
+            <button onclick="setTimer()">Set Timer</button>
+            <button onclick="resetTimer()">Reset Timer</button>
+
+            <script>
+                let time = 10 * 60; // Initial time (10 minutes)
+                let countdownEl = document.getElementById('countdown');
+                let intervalId; // To store interval ID
+
+                function updateCountdown() {
+                    const minutes = Math.floor(time / 60);
+                    let seconds = time % 60;
+                    seconds = seconds < 10 ? '0' + seconds : seconds;
+                    countdownEl.innerHTML = `${minutes}:${seconds}`;
+                    time--;
+                    if (time < 0) {
+                        clearInterval(intervalId); // Stop the timer if time runs out
+                        alert("Time's up!"); // Show an alert when the time runs out
+                    }
+                }
+
+                function setTimer() {
+                    clearInterval(intervalId); // Clear any existing timer
+                    time = parseInt(prompt("Enter time in minutes:"), 10) * 60; // Prompt the user to set the timer
+                    updateCountdown(); // Update the timer display immediately
+                    intervalId = setInterval(updateCountdown, 1000); // Start the timer
+                }
+
+                function resetTimer() {
+                    clearInterval(intervalId); // Stop the timer
+                    time = 10 * 60; // Reset time to 10 minutes
+                    updateCountdown(); // Update the timer display
+                }
+            </script>
+
+
+</body>
+
+</html>
